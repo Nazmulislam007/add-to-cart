@@ -3,8 +3,15 @@ import { Scrollbars } from "react-custom-scrollbars";
 import { useCart } from "./Context/CartContext";
 
 const App = () => {
-  const { products, totalAmount, totalProducts, incriment, decriment } =
-    useCart();
+  const {
+    products,
+    totalAmount,
+    totalProducts,
+    incriment,
+    decriment,
+    deleteItem,
+    deleteAll,
+  } = useCart();
 
   return (
     <>
@@ -21,7 +28,7 @@ const App = () => {
       <section className="main-cart-section">
         <h1>shopping cart</h1>
         <p className="total-items">
-          you have <span className="total-items-count">{7} </span>
+          you have <span className="total-items-count">{totalProducts} </span>
           items.
         </p>
         <div className="cart-items">
@@ -52,7 +59,10 @@ const App = () => {
                       <h3>{price}</h3>
                     </div>
                     <div className="remove-item">
-                      <i className="fas fa-trash-alt add"></i>
+                      <i
+                        className="fas fa-trash-alt add"
+                        onClick={() => deleteItem(id)}
+                      ></i>
                     </div>
                   </div>
                 )
@@ -66,7 +76,7 @@ const App = () => {
               card total : <span>{totalAmount}</span>
             </h3>
             <button>checkout</button>
-            <button>Clear All</button>
+            <button onClick={deleteAll}>Clear All</button>
           </div>
         </div>
       </section>

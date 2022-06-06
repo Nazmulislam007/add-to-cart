@@ -31,8 +31,23 @@ const CartContext = ({ children }) => {
     });
   };
 
+  const deleteItem = (id) => {
+    return dispatch({
+      type: "DELETEITEM",
+      payload: id,
+    });
+  };
+
+  const deleteAll = () => {
+    return dispatch({
+      type: "DELETEALL",
+    });
+  };
+
   return (
-    <createCartContext.Provider value={{ ...state, incriment, decriment }}>
+    <createCartContext.Provider
+      value={{ ...state, incriment, decriment, deleteItem, deleteAll }}
+    >
       {children}
     </createCartContext.Provider>
   );
