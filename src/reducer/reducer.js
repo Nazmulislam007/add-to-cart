@@ -40,5 +40,22 @@ export default function reducer(state, { type, payload }) {
     };
   }
 
+  if (type === "TOTAL_PRODUCTS") {
+    const reduceProducts = state.products.reduce(
+      (accum, curr) => {
+        accum.totalProducts += curr.quantity;
+        accum.totalAmount += curr.quantity * curr.price;
+        return accum;
+      },
+      { totalProducts: 0, totalAmount: 0 }
+    );
+    console.log(reduceProducts);
+    return {
+      ...state,
+      totalAmount: reduceProducts.totalAmount,
+      totalProducts: reduceProducts.totalProducts,
+    };
+  }
+
   return state;
 }

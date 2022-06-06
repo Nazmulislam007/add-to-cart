@@ -17,8 +17,13 @@ const App = () => {
     <>
       <header>
         <div className="continue-shopping">
-          <img src="./images/arrow.png" alt="arrow" className="arrow-icon" />
-          <h3>continue shoping</h3>
+          <h1>
+            <a href="/">Shopping cart</a>
+          </h1>
+          <p className="total-items">
+            you have <span className="total-items-count">{totalProducts} </span>
+            items.
+          </p>
         </div>
         <div className="cart-icon">
           <img src="./images/cart.png" alt="cart" />
@@ -26,11 +31,6 @@ const App = () => {
         </div>
       </header>
       <section className="main-cart-section">
-        <h1>shopping cart</h1>
-        <p className="total-items">
-          you have <span className="total-items-count">{totalProducts} </span>
-          items.
-        </p>
         <div className="cart-items">
           <div className="cart-items-container">
             <Scrollbars>

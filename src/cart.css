@@ -7,6 +7,11 @@
   font-family: Mulish;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 html {
   font-size: 55.5%;
 }
@@ -33,7 +38,7 @@ i {
 
 body {
   width: 80%;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
 }
 
@@ -44,26 +49,30 @@ header {
   grid-template-columns: 1fr 1fr;
   border-bottom: 0.1rem solid #9a9191;
   transform: rotate(-0.05deg);
-  margin-bottom: 7rem;
+  margin-bottom: 3rem;
 }
 
 .continue-shopping {
   display: flex;
   height: inherit;
-  align-items: center;
+  align-items: baseline;
 }
 
-.continue-shopping .arrow-icon {
-  width: 2.2rem;
-  height: 2.2rem;
+.continue-shopping h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: rgba(41, 41, 41, 1);
 }
 
-.continue-shopping h3 {
-  font-size: 2rem;
+.continue-shopping .total-items {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
   text-transform: capitalize;
   color: var(--main-color);
-  margin-left: 1.5rem;
-  font-weight: 400;
+  margin-left: 2rem;
 }
 
 .cart-icon {
@@ -96,24 +105,6 @@ header {
   justify-content: center;
   align-items: center;
   color: var(--main-color);
-}
-
-.main-cart-section h1 {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 3rem;
-  text-transform: capitalize;
-  color: rgba(41, 41, 41, 1);
-  margin-bottom: 1rem;
-}
-
-.main-cart-section .total-items {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.8rem;
-  text-transform: capitalize;
-  color: var(--main-color);
-  margin-bottom: 5rem;
 }
 
 .total-items-count {
@@ -252,7 +243,7 @@ header {
 
 .card-total {
   width: 95%;
-  margin: 4rem 0;
+  margin: 4rem 0 3rem;
   text-align: right;
 }
 

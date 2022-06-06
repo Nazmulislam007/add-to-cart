@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { products } from "../product";
 import reducer from "../reducer/reducer";
 
@@ -43,6 +43,12 @@ const CartContext = ({ children }) => {
       type: "DELETEALL",
     });
   };
+
+  useEffect(() => {
+    return dispatch({
+      type: "TOTAL_PRODUCTS",
+    });
+  }, [state.products]);
 
   return (
     <createCartContext.Provider
